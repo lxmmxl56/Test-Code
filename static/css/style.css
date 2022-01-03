@@ -1,0 +1,25 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.2rem;
+  line-height: 1.75em;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #222;
+  color: #aaa;
+}
+a[href] {
+  color: #1e8ad6;
+}
+a[href]:hover {
+  color: #3ba0e6;
+}
+.column {
+  display:  flex;
+  flex-direction: column;
+}

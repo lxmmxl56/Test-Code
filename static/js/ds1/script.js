@@ -2,36 +2,68 @@
 
 // import {dLinkedNode, dLinkedList, SortedLinkedList} from './doubleLinked.js';
 // import {deque, queue, stack} from './deque.js';
-import {bstNode, bsTree} from './binTree.js';
+// import {bstNode, bsTree} from './binTree.js';
+import {hashTableEntry, hashTable} from './hash.js';
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log('- BINARY NODES -')
+console.log('- HASH Table -')
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-const rootNode = new bstNode('root');
-const leftNode = new bstNode('left');
-const rightNode = new bstNode('right');
-rootNode.left = leftNode;
-rootNode.right = rightNode;
-const bt = new bsTree(rootNode);
-console.log(rootNode.toString());
-console.log(bt.toString());
+const ht4 = new hashTable();
+console.log(ht4.toString());
+ht4.add(1, 2);
+ht4.add('hiya', 'buddy');
+ht4.add('buckle my shoe', 8);
+ht4.add(8, 'shut the door');
+console.log(ht4.toString());
+const ht4Gen = ht4.enumerate(true);
+for (const entry of ht4Gen) {
+  console.log(entry);
+}
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log('- BINARY TREE -')
+console.log('- Find -')
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-const bst = new bsTree();
-console.log(bst.add(12));
-console.log(bst.add(17));
-console.log(bst.add(7));
-console.log(bst.add(15));
-console.log(bst.add(16));
-console.log(bst.add(18));
-console.log(bst.add(3));
+console.log(ht4.find('hiya'));
+console.log(ht4.find('hiyA'));
+console.log(ht4.find(1));
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log('- PRE ORDER TRAVERSAL -')
+console.log('- Remove -')
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-bst.preOrderTraversal(console.log);
+console.log(ht4.toString());
+console.log(ht4.remove('hiya'));
+console.log(ht4.remove('hiyA'));
+console.log(ht4.remove(1));
+console.log(ht4.toString());
+
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log('- BINARY NODES -')
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// const rootNode = new bstNode('root');
+// const leftNode = new bstNode('left');
+// const rightNode = new bstNode('right');
+// rootNode.left = leftNode;
+// rootNode.right = rightNode;
+// const bt = new bsTree(rootNode);
+// console.log(rootNode.toString());
+// console.log(bt.toString());
+
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log('- BINARY TREE -')
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// const bst = new bsTree();
+// console.log(bst.add(12));
+// console.log(bst.add(17));
+// console.log(bst.add(7));
+// console.log(bst.add(15));
+// console.log(bst.add(16));
+// console.log(bst.add(18));
+// console.log(bst.add(3));
+
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log('- PRE ORDER TRAVERSAL -')
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// bst.preOrderTraversal(console.log);
 
 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
 // console.log('- IN ORDER TRAVERSAL -')
@@ -49,28 +81,28 @@ bst.preOrderTraversal(console.log);
 // console.log(bst.search(8));
 // console.log(bst.search(3));
 
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log('- REMOVE -')
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log(bst.remove(17));
-console.log(bst.toString());
-bst.preOrderTraversal(console.log);
-console.log(bst.remove(3));
-console.log(bst.toString());
-bst.preOrderTraversal(console.log);
-console.log(bst.remove(12));
-console.log(bst.toString());
-bst.preOrderTraversal(console.log);
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log('- REMOVE -')
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log(bst.remove(17));
+// console.log(bst.toString());
+// bst.preOrderTraversal(console.log);
+// console.log(bst.remove(3));
+// console.log(bst.toString());
+// bst.preOrderTraversal(console.log);
+// console.log(bst.remove(12));
+// console.log(bst.toString());
+// bst.preOrderTraversal(console.log);
 
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-console.log('- RELATIVE -')
-console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
-const node7 = bst.searchValue(7, true).node;
-console.log(node7);
-const node18 = bst.searchValue(18, true).node;
-console.log(node18);
-console.log(bst.checkRelation(node7, rootNode));
-console.log(bst.checkRelation(node7, node18));
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// console.log('- RELATIVE -')
+// console.log('~~~~~~~~~~~~~~~~~~~~~~~~')
+// const node7 = bst.searchValue(7, true).node;
+// console.log(node7);
+// const node18 = bst.searchValue(18, true).node;
+// console.log(node18);
+// console.log(bst.checkRelation(node7, rootNode));
+// console.log(bst.checkRelation(node7, node18));
 
 // function test(action, value) {
 //   action(value);

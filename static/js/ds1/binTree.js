@@ -15,6 +15,9 @@ export class bsTree {
   constructor(node=null) {
     this.count = 0;
     if (node) {
+      if (!(node instanceof bstNode)) {
+        node = new bstNode(value);
+      }
       this.root = node
       this.count++;
     } else {

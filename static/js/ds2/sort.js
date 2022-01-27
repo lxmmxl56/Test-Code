@@ -19,3 +19,19 @@ export function bubbleSort(toSort) {
     }
     return sorted;
 }
+
+export function insertSort(toSort) {
+    const sorted = [...toSort];
+    if (toSort.length > 1) {
+        for (let i = 1; i < toSort.length; i++) {
+            let h = i - 1;
+            const curr = sorted[i];
+            while ((h >= 0) && (curr < sorted[h])) {
+                sorted[h+1] = sorted[h];
+                h--;
+            }
+            sorted[h+1] = curr;
+        }
+    }
+    return sorted;
+}

@@ -7,10 +7,10 @@ def main(n):
 
 def pair_sum_seq(n):
     sum = 0
-    for i in range(1, n):
+    for i in range(0, n):
         print('range')
         print(i)
-        sum += pair_sum(i, i + 1)
+        sum = pair_sum(sum, i + 1)
         print('sum')
         print(sum)
     return sum

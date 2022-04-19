@@ -8,6 +8,7 @@ console.log(sum(1));
 console.log(sum(2));
 console.log(sum(3));
 console.log(sum(4));
+console.log(sum(5));
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
 console.log('- Pair Sum -');
@@ -17,6 +18,7 @@ console.log(pairSum(1));
 console.log(pairSum(2));
 console.log(pairSum(3));
 console.log(pairSum(4));
+console.log(pairSum(5));
 
 function sum(n) {
     if (n <= 0) {
@@ -27,8 +29,8 @@ function sum(n) {
 
 function pairSum(n) {
     sum = 0;
-    for (let i = 1; i < n; i++) {
-        sum += pairSumRec(i, i + 1);
+    for (let i = 1; i <= n; i++) {
+        sum = pairSumRec(sum, i);
     }
     return sum;
 }

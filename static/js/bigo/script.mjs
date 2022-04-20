@@ -20,14 +20,14 @@ console.log(pairSum(3));
 console.log(pairSum(4));
 console.log(pairSum(5));
 
-function sum(n) {
+export function sum(n) {
     if (n <= 0) {
         return 0;
     }
     return(n + sum(n - 1));
 }
 
-function pairSum(n) {
+export function pairSum(n) {
     sum = 0;
     for (let i = 1; i <= n; i++) {
         sum = pairSumRec(sum, i);

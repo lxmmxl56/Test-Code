@@ -1,6 +1,6 @@
 'use strict';
 
-const BigO = require('./static/js/bigo/script.js');
+const BigO = require('./static/js/crack/bigo.js');
 
 const myBigO = new BigO();
 

@@ -33,6 +33,6 @@ module.exports = class BigO {
       }
     }
     console.log(`Length: ${n}, Count: ${count}`)
-    return (math.sqrt(count) === n);
+    return (`n^2? ${math.sqrt(count) === n}`);
   }
 }

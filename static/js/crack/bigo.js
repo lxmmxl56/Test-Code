@@ -23,6 +23,7 @@ module.exports = class BigO {
     return a + b;
   }
   
+  // this illustrates N^2
   printPairs(a) {
     const n = a.length;
     let count = 0;
@@ -33,6 +34,8 @@ module.exports = class BigO {
       }
     }
     console.log(`Length: ${n}, Count: ${count}`)
-    return (`n^2? ${math.sqrt(count) === n}`);
+    return (`N^2? ${math.sqrt(count) === n}`);
   }
+
+  // this illustrates 2^N
 }

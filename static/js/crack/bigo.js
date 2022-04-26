@@ -29,7 +29,7 @@ module.exports = class BigO {
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < n; j++) {
         count++;
-        console.log(`${i}:${j}`);
+        // console.log(`${i}:${j}`);
       }
     }
     console.log(`Length: ${n}, Count: ${count}`)

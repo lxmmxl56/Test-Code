@@ -30,11 +30,9 @@ module.exports = class BigO {
     for (let i = 0; i < n; i++) {
       for (let j = 0; j < n; j++) {
         count++;
-        // console.log(`${i}:${j}`);
       }
     }
     return `Length: ${n}, Count: ${count}`
-    // return (`N^2? ${math.sqrt(count) === n}`);
   }
   
   // this also illustrates N^2
@@ -44,11 +42,9 @@ module.exports = class BigO {
     for (let i = 0; i < n; i++) {
       for (let j = i + 1; j < n; j++) {
         count++;
-        // console.log(`${i}:${j}`);
       }
     }
     return `Length: ${n}, Count: ${count}`
-    // return (`N^2? ${math.sqrt(count) === n}`);
   }
 
   // this illustrates 2^N - recursive
@@ -58,4 +54,5 @@ module.exports = class BigO {
     }
     return this.twoN(n - 1) + this.twoN(n - 1);
   }
+
 }

@@ -54,5 +54,25 @@ module.exports = class BigO {
     }
     return this.twoN(n - 1) + this.twoN(n - 1);
   }
+  
+  product(a, b) {
+    let sum = 0;
+    let count = 0; 
+    for (let i = 0; i < b; i++) {
+      sum += a;
+      count++;
+    }
+    return count;
+  }
+  
+  power(a, b) {
+    if (b < 0) {
+      return 0;
+    }
+    if (0 === b) {
+      return 1;
+    }
+    return a * this.power(a, b - 1);
+  }
 
 }

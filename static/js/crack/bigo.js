@@ -62,17 +62,18 @@ module.exports = class BigO {
       sum += a;
       count++;
     }
-    return count;
+    return [a,b,sum,count];
   }
   
-  power(a, b) {
+  power(a, b, count=0) {
+    count = count || 0;
     if (b < 0) {
-      return 0;
+      return [0, count];
     }
     if (0 === b) {
-      return 1;
+      return [1, count];
     }
-    return a * this.power(a, b - 1);
+    return [a * this.power(a, b - 1, count + 1)[0], this.power(a, b - 1, count + 1)[1]];
   }
 
 }

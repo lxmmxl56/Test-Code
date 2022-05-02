@@ -1,6 +1,6 @@
 'use strict';
   
-// const math = require('mathjs');
+const math = require('mathjs');
 
 module.exports = class BigO {
   
@@ -68,12 +68,21 @@ module.exports = class BigO {
   power(a, b, count=0) {
     count = count || 0;
     if (b < 0) {
+      console.log('count: ', count);
       return [0, count];
     }
     if (0 === b) {
       return [1, count];
     }
     return [a * this.power(a, b - 1, count + 1)[0], this.power(a, b - 1, count + 1)[1]];
+  }
+
+  mod(a, b) {
+    if (b <= 0) {
+      return -1;
+    }
+    let div = math.floor(a / b);
+    return a - div * b;
   }
 
 }

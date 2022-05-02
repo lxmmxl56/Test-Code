@@ -1,5 +1,5 @@
 'use strict';
-  
+
 const math = require('mathjs');
 
 module.exports = class BigO {
@@ -83,6 +83,16 @@ module.exports = class BigO {
     }
     let div = math.floor(a / b);
     return a - div * b;
+  }
+
+  div(a, b) {
+    let count = 0;
+    let sum = b;
+    while (sum <= a) {
+      sum += b;
+      count++;
+    }
+    return count;
   }
 
 }

@@ -134,3 +134,21 @@ console.log('4:', myBigO.mod(4, 32));
 console.log('5:', myBigO.mod(5, 64));
 
 // o(2)
+
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
+console.log('- Division -');
+console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
+console.log('1:', myBigO.div(2, 1));
+console.log('2:', myBigO.div(4, 2));
+console.log('3:', myBigO.div(8, 3));
+console.log('4:', myBigO.div(16, 4));
+console.log('5:', myBigO.div(32, 5));
+console.log('6:', myBigO.div(64, 6));
+console.log('7:', myBigO.div(128, 7));
+console.log('8:', myBigO.div(256, 8));
+console.log('9:', myBigO.div(512, 9));
+console.log('10:', myBigO.div(1024, 10));
+console.log('100:', myBigO.div(10240, 100));
+console.log('1000:', myBigO.div(102400, 1000));
+
+// o(a/b)

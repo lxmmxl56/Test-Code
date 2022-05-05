@@ -74,7 +74,9 @@ module.exports = class BigO {
     if (0 === b) {
       return [1, count];
     }
-    return [a * this.power(a, b - 1, count + 1)[0], this.power(a, b - 1, count + 1)[1]];
+    const res = this.power(a, b - 1, count + 1);
+    return [a * res[0], res[1]];
+//    return [a * this.power(a, b - 1, count + 1)[0], this.power(a, b - 1, count + 1)[1]];
   }
 
   mod(a, b) {
@@ -94,5 +96,38 @@ module.exports = class BigO {
     }
     return count;
   }
-
+  
+  sqrt(n) {
+    return this.sqrtr(n, 1, n);
+  }
+  
+  sqrtr(n, min, max, count) {
+    count = count || 1;
+    if (max < min) {
+      return [-1, count];
+    }
+    const guess = math.floor((min + max) / 2);
+    const prod = guess * guess;
+    if (n === prod) {
+      return [guess, count];
+    } else if (prod < n) {
+      const res = this.sqrtr(n, guess + 1, max, count + 1);
+      return [res[0], res[1]];
+    } else {
+      const res = this.sqrtr(n, min, guess - 1, count + 1);
+      return [res[0], res[1]];
+    }
+  }
+  
+  sumDigits(n) {
+    let sum = 0;
+    let count = 0;
+    while (n > 0) {
+      count++;
+      sum += n % 10;
+      n = math.floor(n/10);
+    }
+    return [sum, count];
+  }
+  
 }

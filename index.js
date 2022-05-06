@@ -1,6 +1,6 @@
 'use strict';
 
-const Tech = require('./tech.js');
+const Tech = require('./static/js/crack/tech.js');
 
 const myTech = new Tech();
 

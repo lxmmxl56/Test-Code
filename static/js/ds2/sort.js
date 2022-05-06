@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 export function bubbleSort(toSort) {
     const sorted = [...toSort];

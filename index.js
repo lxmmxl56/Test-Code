@@ -5,9 +5,8 @@ const Tech = require('./static/js/crack/tech.js');
 const myTech = new Tech();
 
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('- Square Root -');
+console.log('- String Permutations -');
 console.log('~~~~~~~~~~~~~~~~~~~~~~~~');
-console.log('0:', myTech.x(0));
-console.log('1:', myTech.x(1));
-console.log('2:', myTech.x(2));
-console.log('3:', myTech.x(3));
+console.log('1:', myTech.allPermut('a'));
+console.log('2:', myTech.allPermut('ab'));
+console.log('3:', myTech.allPermut('abc'));

@@ -3,7 +3,7 @@
 const math = require('mathjs');
 
 module.exports = class Tech {
-  
+
   x(n, count) {
     count = count || 1;
     if (n <= 0) {
@@ -12,37 +12,25 @@ module.exports = class Tech {
     const res = this.x(n - 1, count + 1);
     return [n + res[0], res[1]];
   }
-  
-  allPermut(n) {
-    const permutations = [];
-    let count = 0;
-    console.log(n);
-    const string = n.split('');
-    while (string.length > 0) {
-      count++;
-      const last = string.pop();
-      permutations.push(this.permute(string, last))
+
+  permute(input, count) {
+    // count = count || 0;
+    if (1 === input.length) {
+      // return [input, count + 1];
+      return input;
     }
-    return [permutations, count];
-  }
-  
-  permute(string, letter) {
     const permutations = [];
-    if (string.length > 2) {
-      const last = string.pop();
-      permutations.append(this.permute(string, last));
-    } else {
-      permutations.push(string[0] + string[1]);
-      permutations.push(string[1] + string[0]);
-      for (let i = 0; i < permutations.length; i++) {
-        const string = permutations[i];
-        let newString = string;
-        console.log(newString);
-        for (let j = 0; j < string.length; j++) {
-          newString.splice(j, 0, letter);
-        }
+    for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+      const other = input.slice(0, i) + input.slice(i + 1, input.length);
+      console.log(char);
+      console.log(other);
+      for (let j = 0; j < other.length; j++) {
+        permutations.push(char + this.permute(other));
       }
     }
-    return permutations;
-  }  
+    // return [permutations, count];
+    return permutations
+  }
+
 }

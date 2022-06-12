@@ -1,7 +1,7 @@
 {
   "name": "test-code",
   "dependencies": {
-    "mathjs": "^10.5.0",
-    "npm": "^8.9.0"
+    "mathjs": "10.5.2",
+    "npm": "^8.12.1"
   }
 }

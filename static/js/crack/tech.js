@@ -25,9 +25,10 @@ module.exports = class Tech {
       const other = input.slice(0, i) + input.slice(i + 1, input.length);
       console.log(char);
       console.log(other);
-      for (let j = 0; j < other.length; j++) {
+      // for (let j = 0; j < other.length; j++) {
+        // console.log(other[j])
         permutations.push(char + this.permute(other));
-      }
+      // }
     }
     // return [permutations, count];
     return permutations

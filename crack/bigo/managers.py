@@ -1,30 +1,36 @@
+from random import randint
+
 class Employee:
-    def __init__(self, id, name, managerId):
+    def __init__(self, id, managerId):
         self.id = id
-        self.name = name
         self.managerId = managerId
 
     def __str__(self):
-        return f'{self.name}:{self.managerId}'
+        return f'{self.id}:{self.managerId}'
 
     def __repr__(self):
         return self.__str__()
 
 
 def main():
-    emp1 = Employee(1, 'a', None)
-    emp2 = Employee(2, 'b', None)
-    emp3 = Employee(3, 'c', 1)
-    emp4 = Employee(4, 'd', 3)
-    emp5 = Employee(5, 'e', 2)
-    emp6 = Employee(6, 'f', 7)
-    emp7 = Employee(7, 'g', None)
-    emp8 = Employee(8, 'h', 6)
-    employees = [emp1, emp2, emp3, emp4, emp5, emp6, emp7, emp8]
-    employees.sort(key=lambda x: x.managerId or 0)
+    employees = []
+    # number of employees
+    n = 100
+    # loop through and create employees, set managers
+    for x in range(n + 1):
+        manager = randint(0, x)
+        if x == manager:
+            manager = 0
+        employees.append(Employee(x, manager))
+    # sort to get managers in order (top managers first)
+    employees.sort(key=lambda x: x.managerId)
+    # to hash employees to managers
     managers = {}
+    # to count each manager's number of employees
     employee_count = {}
+    count = 0
     for employee in employees:
+        count += 1
         if not employee.managerId:
             employee_count[employee.id] = 0
         elif employee.managerId in employee_count:
@@ -35,10 +41,12 @@ def main():
             managers[employee.id] = employee.managerId
     for employee in managers:
         manager = managers[employee]
-        while manager in managers:
-            manager = managers[manager]
+        # while manager in managers:
+        #     count += 1
+        #     manager = managers[manager]
         employee_count[manager] += 1
-    return(employee_count)
+        count += 2
+    return(employee_count, count)
 
 if __name__ == '__main__':
     print(main())

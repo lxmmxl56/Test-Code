@@ -6,20 +6,11 @@ def main(n):
 
 def permute(n):
     if len(n) <= 1:
-        return [n]
-    chars = list(n)
+        return n
     sol = []
-    for idx, char in enumerate(chars):
-        others = []
-        for i in range(0, len(n)):
-            other = n[i]
-            if idx == i:
-                continue
-            else:
-                others.append(other)
-        others = ''.join(others)
-        permutations = permute(others)
-        for perm in permutations:
+    for i, char in enumerate(n):
+        others = n[:i] + n[i + 1:]
+        for perm in permute(others):
             sol.append(char + perm)
     return sol
 

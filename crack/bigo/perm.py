@@ -6,7 +6,7 @@ def main(n):
 
 def permute(n):
     if len(n) <= 1:
-        return n
+        return [n]
     sol = []
     for i, char in enumerate(n):
         others = n[:i] + n[i + 1:]

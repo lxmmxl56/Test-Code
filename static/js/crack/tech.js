@@ -14,24 +14,23 @@ module.exports = class Tech {
   }
 
   permute(input, count) {
-    // count = count || 0;
-    if (1 === input.length) {
-      // return [input, count + 1];
-      return input;
+    count = count || 0;
+    if (input.length <= 1) {
+      return [input, count + 1];
     }
     const permutations = [];
     for (let i = 0; i < input.length; i++) {
       const char = input[i];
-      const other = input.slice(0, i) + input.slice(i + 1, input.length);
-      console.log(char);
-      console.log(other);
-      // for (let j = 0; j < other.length; j++) {
-        // console.log(other[j])
-        permutations.push(char + this.permute(other));
-      // }
+      const others = input.slice(0, i) + input.slice(i + 1, input.length);
+      const res = this.permute(others);
+      const perms = res[0];
+      count += res[1];
+      for (const perm of perms) {
+        permutations.push(char + perm);
+        count += 1;
+      }
     }
-    // return [permutations, count];
-    return permutations
+    return [permutations, count];
   }
 
 }

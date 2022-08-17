@@ -1,5 +1,8 @@
 import sys
+from timer import timer
 
+
+@timer
 def main(n):
     res = sum(n)
     print(res)

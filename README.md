@@ -12,8 +12,10 @@ python3 -m http.server 8888
 node node/script.js
 ```
 
-🐍  And some python 3 scripts in /py:
+🐍  And some python 3 scripts in /py  
+
+Run as a module from root for the timer decorator relative import to work:
 
 ```
-python3 py/file.py
+python3 -m py.ae.cc_bigo
 ```

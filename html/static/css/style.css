@@ -23,3 +23,6 @@ a[href]:hover {
   display:  flex;
   flex-direction: column;
 }
+.column p {
+  margin: 0;
+}

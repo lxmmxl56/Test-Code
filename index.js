@@ -1,3 +1,5 @@
+// for node
+
 'use strict';
 
 const Tech = require('./static/js/crack/tech.js');

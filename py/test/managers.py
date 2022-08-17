@@ -1,5 +1,6 @@
 from random import randint
 
+
 class Employee:
     def __init__(self, id, managerId):
         self.id = id
@@ -47,6 +48,7 @@ def main():
         employee_count[manager] += 1
         count += 2
     return(employee_count, count)
+
 
 if __name__ == '__main__':
     print(main())
